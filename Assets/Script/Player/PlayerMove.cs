@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
-{   public PlayerData PlayerData;
+{
+    public static PlayerMove Instance;
+    public PlayerData PlayerData;
     private Rigidbody2D rb;
-    public float Speed=5;
-    private int Health;
+    public float Speed;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
     private void Start()
     {
-        Health = PlayerData.MaxHealth;
         rb = GetComponent<Rigidbody2D>();
+        Speed = PlayerData.InitialSpeed;
     }
     private void FixedUpdate()
     {
