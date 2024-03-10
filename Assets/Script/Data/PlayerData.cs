@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerData : ScriptableObject
 {/**********»ù´¡ÊýÖµ*************/
-    public int MaxHealth;
-    public int Health;
-    public int MaxSP;
-    public int SP;
+    public float MaxHealth;
+    public float Health;
+    public float MaxSan;
+    public float San;
     /**********ÉËº¦************/
     public float PhyDamage;
     public float MaDamage;
@@ -19,5 +19,6 @@ public class PlayerData : ScriptableObject
     public bool isPoisoned;
     public bool isBlood;
     public bool isCold;
+    public bool isDead;
 
 }

@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86cf08848c7587642b9cd8172ee3da4f, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  MaxHealth: 0
-  Health: 0
-  MaxSP: 0
-  SP: 0
-  PhyDamage: 0
-  MaDamage: 0
-  GunDamage: 0
+  MaxHealth: 20
+  Health: 10
+  MaxSan: 5
+  San: 5
+  PhyDamage: 3
+  MaDamage: 4
+  GunDamage: 5
   MissRate: 0
   CriticalRate: 0
   isPoisoned: 0
   isBlood: 0
   isCold: 0
+  isDead: 0

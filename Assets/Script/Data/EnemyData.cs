@@ -9,7 +9,9 @@ public class EnemyData : ScriptableObject
     public float PhyDamage;
     public float MaDamage;
     public float GunDamage;
+    public float Speed;
     public bool isPoisoned;
     public bool isBlood;
     public bool isCold;
+    
 }
