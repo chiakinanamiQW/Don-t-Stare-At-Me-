@@ -4,40 +4,41 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [Header(" Ù–‘")]
-    [SerializeField] private EnemyData enemyData;
+    [Header("ÀŸ∂»")]
+    [SerializeField] private float currentSpeed;
+    public Vector2 Movement { get;set; }
 
-    public Vector2 Movement {  get; private set; }
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private Animator anim;
 
     private void Awake()
     {
-        rb= GetComponent<Rigidbody2D>();
-        sr= GetComponent<SpriteRenderer>();
-        anim= GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
     private void FixedUpdate()
     {
-          
+        Move();
     }
-     void  Move()
+    void Move()
     {
-        if (Movement.magnitude > 0.1f && enemyData.Speed >= 0){
-        rb.velocity=Movement*enemyData.Speed;
+        if (Movement.magnitude > 0.1f && currentSpeed >= 0)
+        {
+            rb.velocity = Movement * currentSpeed;
             if (Movement.x < 0)
             {
                 sr.flipX = false;
             }
-            if(Movement.x > 0) 
+            if (Movement.x > 0)
             {
-            sr.flipX=true;
+                sr.flipX = true;
             }
         }
         else
         {
-            rb.velocity= Vector2.zero;  
+            rb.velocity = Vector2.zero;
         }
     }
 }
