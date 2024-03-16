@@ -14,7 +14,7 @@ public class PlayerMove : Attribute//ÒÆ¶¯
     {
         float Move_x = Input.GetAxis("Horizontal");
         float Move_y = Input.GetAxis("Vertical");
-        Vector2 Direction=new Vector2(Move_x, Move_y);
+        Vector2 Direction=new Vector2(Move_x, Move_y).normalized;
         rb.velocity = Direction * Speed ;
     }
 }
