@@ -15,6 +15,8 @@ public class Attribute : MonoBehaviour
     public float MissRate;//闪避率
     public float PhyDenfend;//物理防御
     public float MaDenfend;//法术防御
+    public float PhyDamage;
+    public float MaDamage;
 
     [Header("无敌帧")]
     public float invulnerableDuration;
@@ -36,7 +38,7 @@ public class Attribute : MonoBehaviour
     {
         Health = MaxHealth;
     }
-    public void TakeDamage(Enemy enemy) 
+    public void TakeDamage(Atk enemy) 
     {
         if (invulnerable == true)//如果处于无敌帧 将不会扣血
             return;
@@ -50,20 +52,7 @@ public class Attribute : MonoBehaviour
             Health = 0;
         }
     }
-    public void TakeDamage(EnemyBullet enemy)
-    {
-        if (invulnerable == true)//如果处于无敌帧 将不会扣血
-            return;
-        if (Health - enemy.PhyDamage >= 0)//为防止血条变负数
-        {
-            Health -= enemy.PhyDamage;//掉血
-            TriggerInvulnerable();//掉血后，让后让玩家重新进入无敌帧状态          
-        }
-        else
-        {
-            Health = 0;
-        }
-    }
+   
 
     private void TriggerInvulnerable()
     {

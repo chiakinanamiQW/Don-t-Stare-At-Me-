@@ -22,7 +22,8 @@ public class FireEnemy : MonoBehaviour
     public bool Fireable;
     private void Start()
     {
-        bulletPrefab = (GameObject)Resources.Load(Bullet);
+        bulletPrefab = (GameObject)Resources.Load("Prefabs/Bullet");
+        Debug.Log(bulletPrefab);
     }
     private void Update()
     {
@@ -45,15 +46,5 @@ public class FireEnemy : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().velocity = direction * BulletSpeed;
     }
  
-    IEnumerator SpawnPrefabsContinuously()
-    {
-        while (true)
-        {
-            for (int i = 0; i < ShotNums; i++)
-            {
-                Fire();
-            }
-            yield return new WaitForSeconds(fireDuration);
-        }
-    }
+   
 }

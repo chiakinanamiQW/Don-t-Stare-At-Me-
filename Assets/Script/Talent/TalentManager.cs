@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class TalentManager : MonoBehaviour
 {
+  
+
     public static TalentManager instance;
     [SerializeField] private Button[] talentButtons = new Button[3];
     public TalentList talentList;
@@ -18,6 +20,8 @@ public class TalentManager : MonoBehaviour
         {
             instance = this;
         }
+
+ 
     }
 
     public void TalentChoiceState()
@@ -61,6 +65,7 @@ public class TalentManager : MonoBehaviour
         }
     }
 
+ 
     #region ButtonÃÏ∏≥”¶”√
     public void ApplyRandomTalent0()
     {

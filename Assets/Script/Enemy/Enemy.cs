@@ -5,18 +5,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using Pathfinding;
 
-public class Enemy : MonoBehaviour
+public class Enemy : Attribute
 {
-    [Header("属性")]
-    public int MaxHealth;
-    public int Health;
-    public float PhyDamage;
-    public float MaDamage;
-    public float GunDamage;
-    public float Speed;
-    public bool isPoisoned;
-    public bool isBlood;
-    public bool isCold;
+     
     [Header("寻路参数")]
     public UnityEvent<Vector2> OnMovement;
     public UnityEvent OnAttack;
@@ -34,13 +25,7 @@ public class Enemy : MonoBehaviour
     {
         seeker=GetComponent<Seeker>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            collision.GetComponent<Attribute>().TakeDamage(this);
-        }
-    }
+ 
     //自动寻路
     private void AutoPath() 
     {
