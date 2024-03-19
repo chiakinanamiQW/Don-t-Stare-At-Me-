@@ -27,26 +27,23 @@ public static class Probability
         }
     }
 
-    public static int SetProbabilityEventComplex(float[] floats)
+    public static int SetProbabilityEventComplex(float[] probabilitys)
     {
-        int index;
-        index = -1;
         float randomNum;
         float RangeLimit = 0;
-
         randomNum = Random.Range(0f, 1f);
 
-        for(int i = 0;i < floats.Length;i++)
+        for(int i = 0;i < probabilitys.Length;i++)
         {
-            if(randomNum > RangeLimit && randomNum < RangeLimit + floats[i])
+            if(randomNum > RangeLimit && randomNum < RangeLimit + probabilitys[i])
             {
                 return i;
             }
             else
             {
-                RangeLimit += floats[i];
+                RangeLimit += probabilitys[i];
             }
         }
-        return index;
+        return -1;
     }
 }

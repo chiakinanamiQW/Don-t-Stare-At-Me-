@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 365651098}
         m_TargetAssemblyTypeName: Test, Assembly-CSharp
-        m_MethodName: test1
+        m_MethodName: testProbability
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -419,6 +419,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734a63e20d4605542a88192a2e0358ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  probabilitys:
+  - 0.5
+  - 0.2
+  - 0.2
+  - 0.1
 --- !u!4 &365651099
 Transform:
   m_ObjectHideFlags: 0
