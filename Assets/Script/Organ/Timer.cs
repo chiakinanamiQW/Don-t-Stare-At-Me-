@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     private bool isTimeOut = false;
     [SerializeField] float timer;
     private float timerTime;
+    public bool isFinshed;
     private void Start()
     {
         timerTime = timer;
