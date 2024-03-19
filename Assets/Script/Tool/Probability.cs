@@ -6,10 +6,15 @@ public static class Probability
 {
     public static bool SetProbabilityEventSingle(float probability)
     {
-        if(probability <0 || probability > 1)
+        if(probability <0)
         {
-            Debug.Log("probability <0 || >1");
+            return false;
         }
+        else if(probability > 1) 
+        {
+            return true;
+        }
+
         float randomNum;
         randomNum = Random.Range(0f, 1f);
         if(randomNum<probability)

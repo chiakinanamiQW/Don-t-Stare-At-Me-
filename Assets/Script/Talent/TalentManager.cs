@@ -7,11 +7,6 @@ using UnityEngine.UI;
 
 public class TalentManager : MonoBehaviour
 {
-    public float testpro;
-    public float[] floats = new float[3];
-
-    public FakeProbability f;
-
     public static TalentManager instance;
     [SerializeField] private Button[] talentButtons = new Button[3];
     public TalentList talentList;
@@ -23,8 +18,6 @@ public class TalentManager : MonoBehaviour
         {
             instance = this;
         }
-
-        f = new FakeProbability(0.01f, 20);
     }
 
     public void TalentChoiceState()
@@ -68,20 +61,6 @@ public class TalentManager : MonoBehaviour
         }
     }
 
-    public void test1()
-    {
-        Debug.Log(Probability.SetProbabilityEventSingle(testpro));
-    }
-
-    public void fake()
-    {
-        Debug.Log(f.SetFakeProbability());
-    }
-
-    public void test2()
-    {
-        Debug.Log(Probability.SetProbabilityEventComplex(floats));
-    }
     #region ButtonÃÏ∏≥”¶”√
     public void ApplyRandomTalent0()
     {
