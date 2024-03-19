@@ -12,15 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9caffe7dbb6d5e94282ae8d8e8ac4eeb, type: 3}
   m_Name: Talent4
   m_EditorClassIdentifier: 
-  talentName: "2\u5929\u8D4B\u540D"
+  talentName: "2\u5929\u8D4B\u540D444444"
   talentDescription: "4\u5929\u8D4B\u63CF\u8FF0"
   talentID: 3
   talentType: 0
   talentSprite: {fileID: 0}
-  MaxHealthAddition: 0
-  MaxSanAddition: 0
-  PhyDamageAddition: 0
-  MaDamageAddition: 0
-  GunDamageAddition: 0
-  MissRateAddition: 0
-  CriticalRateAddition: 0
+  MaxHealthAddition: 5
+  MaxSanAddition: 5
+  PhyDamageAddition: 5
+  MaDamageAddition: 5
+  MissRateAddition: 5
+  PhyDenfendAddition: 5
+  MaDenfendAddition: 5
+  SpeedAddition: 5
+  CriticalRateAddition: 5
+  CriticalDamageMagnificationAddition: 5
+  invulnerableDurationAddition: 0.01

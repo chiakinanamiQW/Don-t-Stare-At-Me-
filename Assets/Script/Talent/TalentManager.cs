@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class TalentManager : MonoBehaviour
   
 
     public static TalentManager instance;
+
+    [SerializeField] private Attribute attribute;
     [SerializeField] private Button[] talentButtons = new Button[3];
     public TalentList talentList;
     public TalentData[] talentDatas = new TalentData[3];
@@ -24,6 +27,10 @@ public class TalentManager : MonoBehaviour
  
     }
 
+    private void Start()
+    {
+        attribute = GameObject.Find("Player").GetComponent<Attribute>();
+    }
     public void TalentChoiceState()
     {
         TalentUIEnable();
@@ -64,25 +71,25 @@ public class TalentManager : MonoBehaviour
 
         }
     }
-
  
     #region ButtonÃÏ∏≥”¶”√
     public void ApplyRandomTalent0()
     {
-        TalentData.ApplyTalent(talentDatas[0]);
+        attribute.ApplyAddition(talentDatas[0]);
+        TalentUIUnable();
     }
 
     public void ApplyRandomTalent1() 
     {
-        TalentData.ApplyTalent(talentDatas[1]);
+        attribute.ApplyAddition(talentDatas[1]);
+        TalentUIUnable();
 
     }
 
     public void ApplyRandomTalent2() 
     {
-        
-        TalentData.ApplyTalent(talentDatas[2]);
-
+        attribute.ApplyAddition(talentDatas[2]);
+        TalentUIUnable();
     }
     #endregion
 }

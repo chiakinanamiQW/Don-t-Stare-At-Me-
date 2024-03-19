@@ -22,19 +22,21 @@ public class TalentData : ScriptableObject
 
     public float PhyDamageAddition;
     public float MaDamageAddition;
-    public float GunDamageAddition;
-    public float MissRateAddition;
-    public float CriticalRateAddition;
 
+    public float MissRateAddition;
+    public float PhyDenfendAddition;
+    public float MaDenfendAddition;
+
+    public float SpeedAddition;
+
+    public float CriticalRateAddition;
+    public float CriticalDamageMagnificationAddition;
+
+    public float invulnerableDurationAddition;
     public enum TalentType
     {
         a,
         b,
         c,
-    }
-
-    public static void ApplyTalent(TalentData talent) 
-    {
-        Debug.Log("Talent Applying Wait to Do!"+"\n"+talent.talentName+"\n" +talent.talentID);
     }
 }

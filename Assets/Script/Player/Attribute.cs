@@ -10,16 +10,25 @@ public class Attribute : MonoBehaviour
     /**********基础数值*************/
     public float MaxHealth;
     public float Health ;
+
     public float MaxSan;
     public float San;//精神值
-    public float MissRate;//闪避率
-    public float PhyDenfend;//物理防御
-    public float MaDenfend;//法术防御
+
     public float PhyDamage;
     public float MaDamage;
 
+    public float MissRate;//闪避率
+    public float PhyDenfend;//物理防御
+    public float MaDenfend;//法术防御
+
+    public float Speed;
+
+    public float CriticalRate;
+    public float CriticalDamageMagnification;
+
     [Header("无敌帧")]
     public float invulnerableDuration;
+    public float MaxinvulnerableDuration;
     public float invulnerableCounter;
     public bool invulnerable;
  
@@ -38,6 +47,35 @@ public class Attribute : MonoBehaviour
     {
         Health = MaxHealth;
     }
+
+    public void ApplyAddition(TalentData talentData)
+    {
+        MaxHealth += talentData.MaxHealthAddition;
+        MaxSan += talentData.MaxSanAddition;
+
+        PhyDamage += talentData.PhyDamageAddition;
+        MaDamage += talentData.MaDamageAddition;
+
+        MissRate += talentData.MissRateAddition;
+        PhyDenfend += talentData.PhyDenfendAddition;
+        MaDenfend += talentData.MaDenfendAddition;
+
+        Speed += talentData.SpeedAddition;
+
+        CriticalRate += talentData.CriticalRateAddition;
+        CriticalDamageMagnification += talentData.CriticalDamageMagnificationAddition;
+
+        if(invulnerableDuration + talentData.invulnerableDurationAddition > MaxinvulnerableDuration)
+        {
+            invulnerableDuration = MaxinvulnerableDuration;
+        }
+        else
+        {
+            invulnerableDuration += talentData.invulnerableDurationAddition;
+        }
+
+        Debug.Log("Apply talent:" + talentData.name + "successfully!");
+    }
     public void TakeDamage(Atk enemy) 
     {
         if (invulnerable == true)//如果处于无敌帧 将不会扣血
@@ -53,7 +91,6 @@ public class Attribute : MonoBehaviour
         }
     }
    
-
     private void TriggerInvulnerable()
     {
         if(!invulnerable)
