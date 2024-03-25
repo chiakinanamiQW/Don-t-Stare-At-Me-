@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Calculation
 {
-   public static float calculateFinalPhyDamage(float phyDamage,float CriticalRate,float CriticalAddtion ,float ememyPhyDenfend)
+   public static float calculateFinalPhyDamage(float phyDamage,float CriticalRate,float CriticalDamageMagnification ,float ememyPhyDenfend)
     {
         float finalPhyDamage;
         finalPhyDamage = 0;
@@ -19,7 +19,7 @@ public static class Calculation
 
         if(Probability.SetProbabilityEventSingle(CriticalRate))
         {
-            finalPhyDamage = BasicPhyDamage * CriticalAddtion;
+            finalPhyDamage = BasicPhyDamage * CriticalDamageMagnification;
         }
         else
         {
@@ -29,7 +29,7 @@ public static class Calculation
         return finalPhyDamage;
     }
 
-    public static float calculateFinalMaDamage(float MaDamage, float CriticalRate, float CriticalAddtion, float ememyMaDenfend)
+    public static float calculateFinalMaDamage(float MaDamage, float CriticalRate, float CriticalDamageMagnification, float ememyMaDenfend)
     {
         float finalPhyDamage;
         finalPhyDamage = 0;
@@ -44,7 +44,7 @@ public static class Calculation
 
         if (Probability.SetProbabilityEventSingle(CriticalRate))
         {
-            finalPhyDamage = BasicPhyDamage * CriticalAddtion;
+            finalPhyDamage = BasicPhyDamage * CriticalDamageMagnification;
         }
         else
         {
