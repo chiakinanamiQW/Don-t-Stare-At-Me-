@@ -75,20 +75,20 @@ public class TalentManager : MonoBehaviour
     #region ButtonÃÏ∏≥”¶”√
     public void ApplyRandomTalent0()
     {
-        attribute.ApplyAddition(talentDatas[0]);
+        attribute.ApplyTalent(talentDatas[0]);
         TalentUIUnable();
     }
 
     public void ApplyRandomTalent1() 
     {
-        attribute.ApplyAddition(talentDatas[1]);
+        attribute.ApplyTalent(talentDatas[1]);
         TalentUIUnable();
 
     }
 
     public void ApplyRandomTalent2() 
     {
-        attribute.ApplyAddition(talentDatas[2]);
+        attribute.ApplyTalent(talentDatas[2]);
         TalentUIUnable();
     }
     #endregion

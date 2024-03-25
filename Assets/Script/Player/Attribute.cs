@@ -48,7 +48,7 @@ public class Attribute : MonoBehaviour
         Health = MaxHealth;
     }
 
-    public void ApplyAddition(TalentData talentData)
+    public void ApplyTalent(TalentData talentData)
     {
         MaxHealth += talentData.MaxHealthAddition;
         MaxSan += talentData.MaxSanAddition;
