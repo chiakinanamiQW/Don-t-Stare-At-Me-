@@ -31,7 +31,8 @@ public class Attribute : MonoBehaviour
     public float MaxinvulnerableDuration;
     public float invulnerableCounter;
     public bool invulnerable;
- 
+    
+    //asdsada
     private void Update()
     {
         if(invulnerable)
