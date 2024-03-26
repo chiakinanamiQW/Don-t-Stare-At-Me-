@@ -6,12 +6,12 @@ public class TestWeapon : Weapon
 {
     public override void Attack()
     {
-        Debug.Log(playerAttribute.MaxHealth);
         base.Attack();
+        animator.SetTrigger("Attack");
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("TakeDamager");
+        base.OnTriggerEnter2D(collision);
     }
 }

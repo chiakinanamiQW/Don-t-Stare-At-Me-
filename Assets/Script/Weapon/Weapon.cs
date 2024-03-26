@@ -83,14 +83,15 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void Attack()
     {
-        gameObject.SetActive(true);
+        
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Enemy")
         {
-            Debug.Log("TakeDamage");
+            Debug.Log("Damage");
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(playerAttribute);
         }
     }
     

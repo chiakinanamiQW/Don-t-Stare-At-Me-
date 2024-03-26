@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Attribute : MonoBehaviour
 {
@@ -31,13 +32,12 @@ public class Attribute : MonoBehaviour
     public float MaxinvulnerableDuration;
     public float invulnerableCounter;
     public bool invulnerable;
-    
-    //asdsada
+
     private void Update()
     {
         if(invulnerable)
         {
-            invulnerableCounter-=Time.deltaTime;
+            invulnerableCounter -= Time.deltaTime;
             if(invulnerableCounter <= 0)
             {
                 invulnerable = false;
@@ -84,6 +84,24 @@ public class Attribute : MonoBehaviour
         if (Health - enemy.PhyDamage >= 0)//为防止血条变负数
         {
             Health -= enemy.PhyDamage;//掉血
+            TriggerInvulnerable();//掉血后，让后让玩家重新进入无敌帧状态          
+        }
+        else
+        {
+            Health = 0;
+        }
+    }
+
+    public void TakeDamage(Attribute attacker)
+    {
+        float phyDamage = 0;
+        phyDamage = Calculation.calculateFinalPhyDamage(attacker, this);
+
+        if (invulnerable == true)//如果处于无敌帧 将不会扣血
+            return;
+        if (Health - phyDamage >= 0)//为防止血条变负数
+        {
+            Health -= phyDamage;//掉血
             TriggerInvulnerable();//掉血后，让后让玩家重新进入无敌帧状态          
         }
         else
