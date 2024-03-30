@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
+    [Header("基础属性加成")]
     public float MaxHealthAddition;
     public float MaxSanAddition;
 
@@ -22,17 +23,26 @@ public abstract class Weapon : MonoBehaviour
 
     public float invulnerableDurationAddition;
 
+    [Header("其它")]
+    [SerializeField]protected Vector3 mouseDirection;//鼠标方向
     [SerializeField] protected Attribute playerAttribute;
+    [SerializeField] protected GameObject player;
     [SerializeField] protected Animator animator;
+    //public Vector3 summonPosition;//使用武器时，武器相对玩家的位置
 
     private void Awake()
     {
         playerAttribute = GameObject.Find("Player")?.GetComponent<Attribute>();
+        player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
-        //gameObject.SetActive(false);
     }
 
-    public virtual void EquiPWeapenAddition(Attribute playerAttribute)
+    protected virtual void Update()
+    {
+        mouseDirection = playerAttribute.gameObject.GetComponent<PlayerDirection>().PlayerMousePoint;
+    }
+
+    public virtual void EquiPWeapenAddition(Attribute playerAttribute)//装备时的属性加成
     {
         playerAttribute.MaxHealth += MaxHealthAddition;
         playerAttribute.MaxSan += MaxSanAddition;
@@ -60,7 +70,7 @@ public abstract class Weapon : MonoBehaviour
 
     }
 
-    public virtual void UnloadWeapenAddition( Attribute playerAttribute) 
+    public virtual void UnloadWeapenAddition( Attribute playerAttribute) //卸载时减去属性加成
     {
         playerAttribute.MaxHealth -= MaxHealthAddition;
         playerAttribute.MaxSan -= MaxSanAddition;
@@ -79,6 +89,11 @@ public abstract class Weapon : MonoBehaviour
 
         playerAttribute.invulnerableDuration -= invulnerableDurationAddition;
         
+    }
+
+    public virtual void WeaponGrow(Attribute playerAttribute)//武器大小随属性增加
+    {
+        //Wait to do
     }
 
     public virtual void Attack()

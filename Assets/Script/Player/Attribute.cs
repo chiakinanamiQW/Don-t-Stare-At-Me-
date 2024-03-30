@@ -33,16 +33,30 @@ public class Attribute : MonoBehaviour
     public float invulnerableCounter;
     public bool invulnerable;
 
-    private void Update()
+    protected virtual void Update()
     {
-        if(invulnerable)
+        //if(invulnerable)
+        //{
+        //    Debug.Log("invulnerable update");
+        //    invulnerableCounter -= Time.deltaTime;
+        //    if(invulnerableCounter <= 0)
+        //    {
+        //        Debug.Log("invulnerableCounter");
+        //        invulnerable = false;
+        //    }
+        //}
+        if(invulnerable == true)
         {
+            Debug.Log(invulnerable);
             invulnerableCounter -= Time.deltaTime;
-            if(invulnerableCounter <= 0)
+
+            if(invulnerableCounter <= 0 )
             {
                 invulnerable = false;
+                invulnerableCounter = 0;
             }
         }
+
     }
     private void Awake()
     {

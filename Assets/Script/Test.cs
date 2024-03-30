@@ -6,6 +6,9 @@ using UnityEngine;
 public class Test : MonoBehaviour
 {
     public float[] probabilitys = new float[4];
+
+    public GameObject TestWeapon;
+    public WeaponController Controller;
     public void test1()
     {
         float a;
@@ -22,5 +25,10 @@ public class Test : MonoBehaviour
         {
             Debug.Log(Probability.SetProbabilityEventComplex(probabilitys));
         }
+    }
+
+    public void ttttttt()
+    {
+        Controller.ChangeWeaponList(TestWeapon, 0);
     }
 }

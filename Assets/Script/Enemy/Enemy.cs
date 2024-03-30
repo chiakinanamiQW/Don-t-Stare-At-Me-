@@ -49,14 +49,15 @@ public class Enemy : Attribute
                 GeneratePath(player.position);
             }
         }
-    } 
-    private void Update()
+    }
+    protected override void Update()
     {
-        if(player==null)
+        base.Update();
+        if (player == null)
         {
             return;
         }
-       
+
         float distance = Vector2.Distance(player.position, transform.position);
         if (distance < chaseDistance)
         {
@@ -81,7 +82,7 @@ public class Enemy : Attribute
         {
             OnMovement?.Invoke(Vector2.zero);
         }
-       
+
     }
     //获取路径点
     private void GeneratePath(Vector3 target)

@@ -9,9 +9,4 @@ public class TestWeapon : Weapon
         base.Attack();
         animator.SetTrigger("Attack");
     }
-
-    protected override void OnTriggerEnter2D(Collider2D collision)
-    {
-        base.OnTriggerEnter2D(collision);
-    }
 }

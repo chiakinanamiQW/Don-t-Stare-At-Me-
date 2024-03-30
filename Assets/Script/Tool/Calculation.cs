@@ -98,7 +98,7 @@ public static class Calculation
         }
         else
         {
-            finalMaDamage = BasicMaDamage;
+             finalMaDamage = BasicMaDamage;
         }
 
         return finalMaDamage;
