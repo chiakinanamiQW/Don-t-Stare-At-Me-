@@ -24,9 +24,15 @@ public class WeaponController : MonoBehaviour
     void Update()
     {
         Controllrotate();
-        if (Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Q)|| Input.GetKeyDown(KeyCode.E))
         {
             SwitchWeapon();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            PlayerAttack();
         }
     }
 
@@ -84,11 +90,13 @@ public class WeaponController : MonoBehaviour
 
     public void ChangeWeaponList(GameObject newWeapon,int changedWeaponIndex)
     {
+        
         GameObject oldWeapon = weaponsList[changedWeaponIndex];
         weaponsList[changedWeaponIndex] = newWeapon;
 
-        if(transform.GetChild(0).gameObject == oldWeapon)
+        if (currentWeapon == oldWeapon)
         {
+            Debug.Log("Destiory");
             currentWeapon = newWeapon;
             CurrentWeaponSummon();
         }
