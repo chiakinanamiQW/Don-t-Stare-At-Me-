@@ -42,7 +42,7 @@ public abstract class Weapon : MonoBehaviour
         mouseDirection = playerAttribute.gameObject.GetComponent<PlayerDirection>().PlayerMousePoint;
     }
 
-    public virtual void EquiPWeapenAddition(Attribute playerAttribute)//装备时的属性加成
+    public virtual void EquipWeapenAddition(Attribute playerAttribute)//装备时的属性加成
     {
         playerAttribute.MaxHealth += MaxHealthAddition;
         playerAttribute.MaxSan += MaxSanAddition;

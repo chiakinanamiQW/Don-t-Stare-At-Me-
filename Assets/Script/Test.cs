@@ -29,6 +29,6 @@ public class Test : MonoBehaviour
 
     public void ttttttt()
     {
-        Controller.ChangeWeaponList(TestWeapon, 0);
+        Controller.GetNewWeapon(TestWeapon, 0);
     }
 }

@@ -21,6 +21,11 @@ public class WeaponController : MonoBehaviour
         playerDirection = transform.parent.GetComponent<PlayerDirection>();
     }
 
+    private void Start()
+    {
+        ApplyWeaponAddition();
+    }
+
     void Update()
     {
         Controllrotate();
@@ -88,17 +93,37 @@ public class WeaponController : MonoBehaviour
         }
     }
 
-    public void ChangeWeaponList(GameObject newWeapon,int changedWeaponIndex)
+    public void GetNewWeapon(GameObject newWeapon,int index)
     {
-        
-        GameObject oldWeapon = weaponsList[changedWeaponIndex];
-        weaponsList[changedWeaponIndex] = newWeapon;
+        weaponsList[index].GetComponent<Weapon>().UnloadWeapenAddition(playerAttribute);
 
-        if (currentWeapon == oldWeapon)
+        if(currentWeapon == weaponsList[index])
         {
-            Debug.Log("Destiory");
+            weaponsList[index] = newWeapon;
+            newWeapon.GetComponent<Weapon>().EquipWeapenAddition(playerAttribute);
+            currentWeapon = newWeapon;
+           foreach(Transform t in this.transform) 
+           {
+                Destroy(t.gameObject);
+           }
+            CurrentWeaponSummon();
+        }
+        else
+        {
+            weaponsList[index] = newWeapon;
             currentWeapon = newWeapon;
             CurrentWeaponSummon();
+        }
+    }
+
+    public void ApplyWeaponAddition()
+    {
+        foreach (GameObject weapon in weaponsList)
+        {
+            if(weapon != null) 
+            {
+                weapon.GetComponent<Weapon>().EquipWeapenAddition(playerAttribute);
+            }
         }
     }
 }
