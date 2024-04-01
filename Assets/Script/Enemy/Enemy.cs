@@ -24,6 +24,7 @@ public class Enemy : Attribute
     private void Awake()
     {
         seeker=GetComponent<Seeker>();
+        Health = MaxHealth;
     }
  
     //×Ô¶¯Ñ°Â·
