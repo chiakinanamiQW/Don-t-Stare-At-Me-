@@ -30,16 +30,17 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected Animator animator;
     //public Vector3 summonPosition;//使用武器时，武器相对玩家的位置
 
-    private void Awake()
+    protected virtual void Awake()
     {
-        playerAttribute = GameObject.Find("Player")?.GetComponent<Attribute>();
+        
         player = GameObject.Find("Player");
-        animator = GetComponent<Animator>();
+        playerAttribute = player.GetComponent<Attribute>();
+        //animator = GetComponent<Animator>();
     }
 
     protected virtual void Update()
     {
-        mouseDirection = playerAttribute.gameObject.GetComponent<PlayerDirection>().PlayerMousePoint;
+        mouseDirection = player.GetComponent<PlayerDirection>().PlayerMousePoint;
     }
 
     public virtual void EquipWeapenAddition(Attribute playerAttribute)//装备时的属性加成
@@ -98,7 +99,7 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void Attack()
     {
-        
+        this.GetComponent<Collider2D>().enabled = true;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)

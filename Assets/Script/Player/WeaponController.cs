@@ -28,8 +28,6 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-        Controllrotate();
-
         if (Input.GetKeyDown(KeyCode.Q)|| Input.GetKeyDown(KeyCode.E))
         {
             SwitchWeapon();
@@ -39,6 +37,11 @@ public class WeaponController : MonoBehaviour
         {
             PlayerAttack();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Controllrotate();
     }
 
     private void Controllrotate()
