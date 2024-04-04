@@ -24,7 +24,7 @@ public abstract class Weapon : MonoBehaviour
     public float invulnerableDurationAddition;
 
     [Header("其它")]
-    [SerializeField]protected Vector3 mouseDirection;//鼠标方向
+    [SerializeField]protected Vector2 mouseDirection;//鼠标方向
     [SerializeField] protected Attribute playerAttribute;
     [SerializeField] protected GameObject player;
     [SerializeField] protected Animator animator;
@@ -35,7 +35,7 @@ public abstract class Weapon : MonoBehaviour
         
         player = GameObject.Find("Player");
         playerAttribute = player.GetComponent<Attribute>();
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     protected virtual void Update()

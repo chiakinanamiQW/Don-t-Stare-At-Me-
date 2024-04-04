@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 519420031}
-  playerMousePoint: {x: 0, y: 0, z: 0}
+  playerMousePoint: {x: 0, y: 0}
 --- !u!1 &80545894
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +342,7 @@ GameObject:
   - component: {fileID: 80545897}
   - component: {fileID: 80545896}
   - component: {fileID: 80545895}
+  - component: {fileID: 80545898}
   m_Layer: 0
   m_Name: Test RemoteWeapon
   m_TagString: Untagged
@@ -372,12 +373,12 @@ MonoBehaviour:
   CriticalRateAddition: 0
   CriticalDamageMagnificationAddition: 0
   invulnerableDurationAddition: 0
-  mouseDirection: {x: 0, y: 0, z: 0}
+  mouseDirection: {x: 0, y: 0}
   playerAttribute: {fileID: 0}
   player: {fileID: 0}
-  animator: {fileID: 0}
-  WeaponBullet: {fileID: 7720215219392398727, guid: 747c49bc87ad58b48941a3df98bd3ce9, type: 3}
-  fireFrequency: 0
+  animator: {fileID: 1050423130}
+  WeaponBullet: {fileID: 1799562366649381208, guid: c89d6ae762e06d9409f4c06cc820ebf4, type: 3}
+  fireFrequency: 5
   canFire: 0
   canfireCounter: 0
 --- !u!212 &80545896
@@ -447,6 +448,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &80545898
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80545894}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1001 &133807426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2090,13 +2126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734a63e20d4605542a88192a2e0358ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  probabilitys:
-  - 0
-  - 0
-  - 0
-  - 0
-  TestWeapon: {fileID: 1050423125}
-  Controller: {fileID: 1275944743}
 --- !u!4 &708373960
 Transform:
   m_ObjectHideFlags: 0
@@ -2780,10 +2809,10 @@ MonoBehaviour:
   CriticalRateAddition: 0
   CriticalDamageMagnificationAddition: 0
   invulnerableDurationAddition: 0
-  mouseDirection: {x: 0, y: 0, z: 0}
+  mouseDirection: {x: 0, y: 0}
   playerAttribute: {fileID: 0}
   player: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 1050423130}
 --- !u!212 &1050423128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3209,9 +3238,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponsList:
-  - {fileID: 1050423125}
   - {fileID: 80545894}
-  currentWeapon: {fileID: 1050423125}
+  - {fileID: 2497603898209364768, guid: d13b36ed618577c43adc07e50a84a311, type: 3}
+  currentWeapon: {fileID: 0}
   playerDirection: {fileID: 0}
   playerAttribute: {fileID: 0}
 --- !u!1 &1297611331

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3085350086636792750}
   - component: {fileID: 7994168046059415912}
   - component: {fileID: 9182124942487345440}
+  - component: {fileID: 7794363025843408804}
   m_Layer: 0
   m_Name: TestBullet
   m_TagString: Untagged
@@ -99,7 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   existTime: 5
+  flySpeed: 0
   playerattribute: {fileID: 0}
+  rigidbody2D: {fileID: 0}
 --- !u!61 &9182124942487345440
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,3 +148,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &7794363025843408804
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720215219392398727}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

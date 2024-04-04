@@ -31,6 +31,8 @@ public class WoodenStick : Weapon
         {
             i = 0;
         }
+
+        i--;
     }
 
     public void OnDestroy()
@@ -46,7 +48,7 @@ public class WoodenStick : Weapon
                 i--;
             }
             Debug.Log(i);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.01f);
         }
     }
 
