@@ -114,6 +114,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   playerattribute: {fileID: 0}
   rigidbody2d: {fileID: 0}
+  offset: 0.2
 --- !u!1 &6642416221819778427
 GameObject:
   m_ObjectHideFlags: 0

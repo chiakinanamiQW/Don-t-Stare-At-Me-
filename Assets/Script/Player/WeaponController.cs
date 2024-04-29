@@ -33,7 +33,7 @@ public class WeaponController : MonoBehaviour
             SwitchWeapon();
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKeyDown(KeyCode.Mouse0)||Input.GetKey(KeyCode.Mouse0))
         {
             PlayerAttack();
         }

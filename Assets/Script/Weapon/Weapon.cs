@@ -99,7 +99,7 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void Attack()
     {
-        this.GetComponent<Collider2D>().enabled = true;
+        //this.GetComponent<Collider2D>().enabled = true;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
