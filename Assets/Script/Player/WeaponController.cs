@@ -28,17 +28,20 @@ public class WeaponController : MonoBehaviour
 
     void Update()
     {
-        Controllrotate();
-
         if (Input.GetKeyDown(KeyCode.Q)|| Input.GetKeyDown(KeyCode.E))
         {
             SwitchWeapon();
         }
 
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKeyDown(KeyCode.Mouse0)||Input.GetKey(KeyCode.Mouse0))
         {
             PlayerAttack();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Controllrotate();
     }
 
     private void Controllrotate()
