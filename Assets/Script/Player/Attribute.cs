@@ -56,6 +56,10 @@ public class Attribute : MonoBehaviour
                 invulnerableCounter = 0;
             }
         }
+        if (Health <= 0)
+        {
+            gameObject.SetActive(false);
+        }
 
     }
     private void Awake()

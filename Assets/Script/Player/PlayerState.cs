@@ -12,4 +12,6 @@ public class PlayerState : MonoBehaviour//״̬
     public bool isBlood;
     public bool isCold;
     public bool isDead;
+//需要通过方法来传递bool值来判断是否有对应效果
+
 }

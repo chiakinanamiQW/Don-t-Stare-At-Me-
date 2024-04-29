@@ -305,7 +305,7 @@ MonoBehaviour:
   Health: 0
   MaxSan: 0
   San: 0
-  PhyDamage: 0
+  PhyDamage: 5
   MaDamage: 0
   MissRate: 0
   PhyDenfend: 0
@@ -895,7 +895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &197137703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1289,7 +1289,7 @@ Transform:
   m_GameObject: {fileID: 350056423}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 41.04355, y: 7.056572, z: 0.23928276}
+  m_LocalPosition: {x: 40.6, y: 6.1, z: 0.23928276}
   m_LocalScale: {x: 42.485004, y: 9.399002, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2461,7 +2461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4e8ab9021697b6c44b421c895e442bd7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2536,7 +2536,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: a891c2d7b07fc8d47bef1a1a0bd951e5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2781,9 +2781,9 @@ MonoBehaviour:
   CriticalDamageMagnificationAddition: 0
   invulnerableDurationAddition: 0
   mouseDirection: {x: 0, y: 0, z: 0}
-  playerAttribute: {fileID: 0}
-  player: {fileID: 0}
-  animator: {fileID: 0}
+  playerAttribute: {fileID: 18525639}
+  player: {fileID: 18525633}
+  animator: {fileID: 1050423130}
 --- !u!212 &1050423128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3158,7 +3158,7 @@ Transform:
   m_GameObject: {fileID: 1212566830}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -17.156452, y: 7.1565714, z: 0.23928276}
+  m_LocalPosition: {x: -18.4, y: 6.5, z: 0.23928276}
   m_LocalScale: {x: 42.485004, y: 9.399002, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3579,7 +3579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 50
-  Health: 2.13
+  Health: 50
   MaxSan: 0
   San: 0
   PhyDamage: 5
