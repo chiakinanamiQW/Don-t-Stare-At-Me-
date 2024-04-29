@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerDirection : MonoBehaviour
 {
     public Camera camera;
-    [SerializeField]private Vector2 playerMousePoint;
-    public Vector2 PlayerMousePoint
+    [SerializeField]private Vector3 playerMousePoint;
+    public Vector3 PlayerMousePoint
     {
         get
         {
@@ -25,11 +25,11 @@ public class PlayerDirection : MonoBehaviour
         playerMousePoint = GetPlayerPosDirection();
     }
 
-    public Vector2 GetPlayerPosDirection()
+    public Vector3 GetPlayerPosDirection()
     {
         Vector3 playerPosition = transform.position;
         Vector3 mousePosition = camera.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = mousePosition - playerPosition;
+        Vector3 direction = mousePosition - playerPosition;
         direction.Normalize();
         return direction;
     }

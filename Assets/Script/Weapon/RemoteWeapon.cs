@@ -6,7 +6,6 @@ public abstract class RemoteWeapon : Weapon
 {
     public GameObject WeaponBullet;//武器对应射弹
     public float fireFrequency;//攻击频率 次每秒
-
     [SerializeField]protected bool canFire;
     [SerializeField]protected float canfireCounter;
 
@@ -25,6 +24,8 @@ public abstract class RemoteWeapon : Weapon
             }
             canFire = false;
             Instantiate(WeaponBullet, transform.position, transform.rotation);
+            Bullet bullet = WeaponBullet.GetComponent<Bullet>();
+            bullet.playerattribute = playerAttribute;
         }
     }
 
